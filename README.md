@@ -16,7 +16,7 @@ Mobを倒すとLuckyBlockの効果が発動します。<br>
 MobのテクスチャはModファイルに組み込まれてあります。<br>
 有効化するには、ゲーム内でリソースパック設定から"Mod Resources"を最上位にしてください。<br>
 もし何らかの不都合がある場合、以下のURLから個別にリソースパックとしてダウンロードできます。<br>
-
+https://github.com/kyazuki/LuckyMobsMod/releases/download/v0.1.0/LuckyMobsMod.ResourcePack.zip
 
 ## configファイル
 Modを導入した状態で一回でも起動すると、configフォルダ内にdietmod-client.tomlが生成されます。<br>
