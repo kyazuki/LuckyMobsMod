@@ -35,7 +35,8 @@ public class LuckyMobsMod {
           DropProcessData dropData = new DropProcessData(event.getEntity().world, event.getSource().getTrueSource(), event.getEntity().getPosition());
           int luck = (new Random()).nextInt(201);
           luck -= 100;
-          ((PlayerEntity) (event.getSource().getTrueSource())).sendMessage(new StringTextComponent("Luck: " + luck));
+          if (LuckyMobsModConfig.luck_show_chat)
+            ((PlayerEntity) (event.getSource().getTrueSource())).sendMessage(new StringTextComponent("Luck: " + luck));
           dropProcessor.processRandomDrop(Lucky.luckyBlock.getDropProcessor().getDrops(), dropData, luck, true);
         }
       }

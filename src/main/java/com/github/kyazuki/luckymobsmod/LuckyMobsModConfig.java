@@ -17,6 +17,7 @@ public class LuckyMobsModConfig {
   }
 
   public static boolean enable_on_creative;
+  public static boolean luck_show_chat;
 
   @SubscribeEvent
   public static void onModConfigEvent(final ModConfig.ModConfigEvent configEvent) {
@@ -27,11 +28,13 @@ public class LuckyMobsModConfig {
 
   public static void bakeConfig() {
     enable_on_creative = CLIENT.enable_on_creative.get();
+    luck_show_chat = CLIENT.luck_show_chat.get();
   }
 
   public static class ClientConfig {
 
     public final ForgeConfigSpec.BooleanValue enable_on_creative;
+    public final ForgeConfigSpec.BooleanValue luck_show_chat;
 
     public ClientConfig(ForgeConfigSpec.Builder builder) {
       builder.push("LuckyMobsMod Config");
@@ -39,6 +42,10 @@ public class LuckyMobsModConfig {
               .comment("Enable lucky effects on creative.")
               .translation(LuckyMobsMod.MODID + ".config" + "enable_on_creative")
               .define("enable_on_creative", false);
+      luck_show_chat = builder
+              .comment("Send the luck value to chat.")
+              .translation(LuckyMobsMod.MODID + ".config" + "luck_show_chat")
+              .define("luck_show_chat", false);
       builder.pop();
     }
 
